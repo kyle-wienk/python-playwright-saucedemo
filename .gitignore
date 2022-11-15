@@ -1,0 +1,8 @@
+# python
+__pycache__/
+
+# pyenv
+.python-version
+
+# pytest
+.pytest_cache/
