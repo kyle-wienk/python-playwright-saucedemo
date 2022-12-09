@@ -1,4 +1,5 @@
 from playwright.sync_api import Page, expect
+import pages
 
 # TODO: Generally move away from a basic procedural paradigm/style
 # TODO: Remove hardcoded test data from functions
@@ -8,15 +9,6 @@ from playwright.sync_api import Page, expect
 def navigate_to_saucedemo(page: Page):
     page.goto("https://www.saucedemo.com/")
     expect(page).to_have_title("Swag Labs")
-
-def login_standard(page: Page):
-    user_name_input = page.locator("id=user-name")
-    password_input = page.locator("id=password")
-    login_button = page.locator("id=login-button")
-    user_name_input.fill("standard_user")
-    password_input.fill("secret_sauce")
-    login_button.click()
-    expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
 
 def open_backpack_product_page(page: Page):
     backpack_link = page.locator("text=Sauce Labs Backpack")
@@ -37,17 +29,6 @@ def open_checkout(page: Page):
     checkout_button = page.locator("id=checkout")
     checkout_button.click()
     expect(page).to_have_url("https://www.saucedemo.com/checkout-step-one.html")
-
-def complete_checkout_step_1(page: Page):
-    first_name_input = page.locator("id=first-name")
-    last_name_input = page.locator("id=last-name")
-    postal_code_input = page.locator("id=postal-code")
-    continue_button = page.locator("id=continue")
-    first_name_input.fill("Derek")
-    last_name_input.fill("Zoolander")
-    postal_code_input.fill("1234")
-    continue_button.click()
-    expect(page).to_have_url("https://www.saucedemo.com/checkout-step-two.html")
 
 def complete_checkout_step_2(page: Page):
     finish_button = page.locator("id=finish")
