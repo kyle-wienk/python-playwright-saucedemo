@@ -39,3 +39,4 @@ def test_sauce(page: Page):
 
     helper.logout(page)
     time.sleep(2)
+    

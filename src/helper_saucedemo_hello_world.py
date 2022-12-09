@@ -43,3 +43,4 @@ def logout(page: Page):
         menu_button.click()
     logout_button.click()
     expect(page).to_have_url("https://www.saucedemo.com/")
+    

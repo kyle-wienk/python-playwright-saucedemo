@@ -27,3 +27,4 @@ class your_information_checkout_page:
         self.postal_code_input.fill(postal_code)
         self.continue_button.click()
         expect(self.page).to_have_url("https://www.saucedemo.com/checkout-step-two.html")
+        
